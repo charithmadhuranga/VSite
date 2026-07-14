@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react';
 
 const footerLinks = {
@@ -21,6 +22,7 @@ const footerLinks = {
   Company: [
     { label: 'About Us', href: '#about' },
     { label: 'Our Team', href: '#team' },
+    { label: 'Blog', href: '/blog', isRouter: true },
     { label: 'Contact', href: '#contact' },
     { label: 'Careers', href: '#' },
   ],
@@ -68,12 +70,21 @@ export default function Footer() {
               <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-sm text-text-muted hover:text-white transition-colors duration-200"
-                    >
-                      {link.label}
-                    </a>
+                    {link.isRouter ? (
+                      <Link
+                        to={link.href}
+                        className="text-sm text-text-muted hover:text-white transition-colors duration-200"
+                      >
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <a
+                        href={link.href}
+                        className="text-sm text-text-muted hover:text-white transition-colors duration-200"
+                      >
+                        {link.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>

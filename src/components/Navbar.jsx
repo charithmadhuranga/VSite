@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 
@@ -121,6 +122,12 @@ export default function Navbar() {
         </div>
 
         <div className="hidden lg:flex items-center gap-3">
+          <Link
+            to="/blog"
+            className="px-4 py-2 text-sm font-medium text-text-secondary hover:text-white transition-colors duration-300 rounded-lg hover:bg-white/5"
+          >
+            Blog
+          </Link>
           <motion.a
             href="https://vioneta.com"
             target="_blank"
@@ -194,6 +201,13 @@ export default function Navbar() {
                 </div>
               ))}
               <div className="pt-4 space-y-3">
+                <Link
+                  to="/blog"
+                  onClick={() => setMobileOpen(false)}
+                  className="block w-full text-center px-6 py-3 text-sm font-medium text-text-secondary hover:text-white rounded-xl hover:bg-white/5"
+                >
+                  Blog
+                </Link>
                 <a
                   href="#contact"
                   className="block w-full text-center px-6 py-3 text-sm font-semibold text-dark bg-gradient-to-r from-primary to-primary-light rounded-xl"

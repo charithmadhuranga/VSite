@@ -179,3 +179,49 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+.quill-dark .ql-toolbar {
+  background: rgba(255,255,255,0.03);
+  border-color: rgba(255,255,255,0.1);
+  border-radius: 8px 8px 0 0;
+}
+.quill-dark .ql-container {
+  border-color: rgba(255,255,255,0.1);
+  border-radius: 0 0 8px 8px;
+  min-height: 300px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 15px;
+  color: #f1f5f9;
+}
+.quill-dark .ql-editor {
+  min-height: 300px;
+}
+.quill-dark .ql-editor.ql-blank::before {
+  color: rgba(255,255,255,0.25);
+  font-style: normal;
+}
+.quill-dark .ql-stroke {
+  stroke: rgba(255,255,255,0.5);
+}
+.quill-dark .ql-fill {
+  fill: rgba(255,255,255,0.5);
+}
+.quill-dark .ql-picker {
+  color: rgba(255,255,255,0.6);
+}
+.quill-dark .ql-picker-options {
+  background: #1a2035;
+  border-color: rgba(255,255,255,0.1);
+}
+.quill-dark .ql-active .ql-stroke {
+  stroke: #00d4aa;
+}
+.quill-dark .ql-active .ql-fill {
+  fill: #00d4aa;
+}
+.quill-dark .ql-active {
+  color: #00d4aa;
+}
+.quill-dark .ql-picker.ql-active .ql-picker-label {
+  color: #00d4aa;
+}
