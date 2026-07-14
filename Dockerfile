@@ -1,11 +1,11 @@
 FROM node:20-alpine AS frontend-build
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci
+RUN npm ci --ignore-scripts
 COPY . .
 RUN npm run build
 
-FROM node:20-alpine
+FROM node:20
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci --omit=dev
