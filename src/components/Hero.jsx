@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ArrowRight, Play } from 'lucide-react';
+import MagneticButton from './MagneticButton';
 
 function GridBackground() {
   return (
@@ -216,27 +217,27 @@ export default function Hero() {
               transition={{ delay: 1.4, duration: 0.6 }}
               className="flex flex-wrap gap-4"
             >
-              <motion.a
-                href="#products"
-                className="group relative inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-dark bg-gradient-to-r from-primary to-primary-light rounded-2xl overflow-hidden"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-              >
-                <span className="relative z-10">Explore Platform</span>
-                <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-light to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </motion.a>
-              <motion.a
-                href="#about"
-                className="group inline-flex items-center gap-3 px-8 py-4 text-base font-semibold text-text-secondary hover:text-white glass-card rounded-2xl transition-all duration-300"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-              >
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <Play className="w-4 h-4 ml-0.5" />
-                </div>
-                <span>Watch Demo</span>
-              </motion.a>
+              <MagneticButton strength={0.2}>
+                <a
+                  href="#products"
+                  className="group relative inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-dark bg-gradient-to-r from-primary to-primary-light rounded-2xl overflow-hidden"
+                >
+                  <span className="relative z-10">Explore Platform</span>
+                  <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary-light to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </a>
+              </MagneticButton>
+              <MagneticButton strength={0.2}>
+                <a
+                  href="#about"
+                  className="group inline-flex items-center gap-3 px-8 py-4 text-base font-semibold text-text-secondary hover:text-white glass-card rounded-2xl transition-all duration-300"
+                >
+                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <Play className="w-4 h-4 ml-0.5" />
+                  </div>
+                  <span>Watch Demo</span>
+                </a>
+              </MagneticButton>
             </motion.div>
 
             <motion.div

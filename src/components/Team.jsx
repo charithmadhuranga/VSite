@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight } from 'lucide-react';
+import TiltCard from './TiltCard';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -83,13 +84,8 @@ export default function Team() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
           {team.map((member, i) => (
-            <motion.div
+            <TiltCard
               key={member.name}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.6 }}
-              whileHover={{ y: -5 }}
               className="group text-center"
             >
               <div className="relative w-28 h-28 mx-auto mb-5">
@@ -100,7 +96,7 @@ export default function Team() {
               </div>
               <h4 className="text-sm font-bold text-white mb-1">{member.name}</h4>
               <p className="text-xs text-text-muted">{member.role}</p>
-            </motion.div>
+            </TiltCard>
           ))}
         </div>
       </div>

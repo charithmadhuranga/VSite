@@ -6,6 +6,7 @@ import {
   Layers, Globe, Shield, Cpu, RefreshCw, Workflow,
   Radio, Database, Lock, Gauge
 } from 'lucide-react';
+import TiltCard from './TiltCard';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -109,13 +110,8 @@ export default function Features() {
           {features.map((feature, i) => {
             const Icon = feature.icon;
             return (
-              <motion.div
+              <TiltCard
                 key={feature.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05, duration: 0.5 }}
-                whileHover={{ y: -4, scale: 1.02 }}
                 className="group rounded-2xl glass-card p-6 border border-white/5 hover:border-primary/20 transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -123,7 +119,7 @@ export default function Features() {
                 </div>
                 <h4 className="text-sm font-bold text-white mb-2">{feature.title}</h4>
                 <p className="text-xs text-text-secondary leading-relaxed">{feature.description}</p>
-              </motion.div>
+              </TiltCard>
             );
           })}
         </div>

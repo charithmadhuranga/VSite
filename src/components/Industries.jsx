@@ -6,6 +6,7 @@ import {
   Leaf, Factory, Zap, HeartPulse, Truck, Building2,
   ArrowRight, ArrowUpRight
 } from 'lucide-react';
+import CardSpotlight from './CardSpotlight';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -135,10 +136,9 @@ export default function Industries() {
           {industries.map((industry, i) => {
             const Icon = industry.icon;
             return (
-              <motion.div
+              <CardSpotlight
                 key={industry.name}
                 className={`industry-card group relative rounded-2xl glass-card p-7 border ${industry.borderColor} transition-all duration-300 cursor-pointer`}
-                whileHover={{ y: -4, scale: 1.01 }}
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${industry.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl`} />
                 <div className="relative z-10">
@@ -157,7 +157,7 @@ export default function Industries() {
                     <ArrowUpRight className="w-4 h-4" />
                   </div>
                 </div>
-              </motion.div>
+              </CardSpotlight>
             );
           })}
         </div>
