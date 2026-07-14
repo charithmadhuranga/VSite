@@ -3,8 +3,6 @@ import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Sparkles } from 'lucide-react';
-import CardSpotlight from './CardSpotlight';
-import MagneticButton from './MagneticButton';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -32,8 +30,7 @@ export default function CTA() {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="max-w-5xl mx-auto px-6">
-        <CardSpotlight spotlightColor="255,255,255" className="relative rounded-[2rem] overflow-hidden">
-          <div className="absolute inset-0 bg-[#111827]" />
+        <div className="relative rounded-[2rem] overflow-hidden bg-[#111827] border border-white/[0.04]">
 
           <div className="relative z-10 p-12 lg:p-20 text-center cta-content">
             <motion.div
@@ -58,29 +55,26 @@ export default function CTA() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <MagneticButton strength={0.15}>
-                <a
-                  href="https://vioneta.com"
-                  target="_blank"
-                  className="group inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-dark bg-gradient-to-r from-primary to-primary-light rounded-2xl overflow-hidden"
-                >
-                  <span className="relative z-10">Contact Sales</span>
-                  <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary-light to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </a>
-              </MagneticButton>
-              <MagneticButton strength={0.15}>
-                <a
-                  href="https://vioneta.com"
-                  target="_blank"
-                  className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-text-secondary hover:text-white bg-white/5 rounded-2xl transition-colors duration-300 border border-white/5 hover:border-white/10"
-                >
-                  Explore Documentation
-                </a>
-              </MagneticButton>
+              <a
+                href="https://vioneta.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-dark bg-gradient-to-r from-primary to-primary-light rounded-2xl hover:shadow-[0_0_30px_rgba(0,212,170,0.25)] transition-all duration-300"
+              >
+                <span>Contact Sales</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a
+                href="https://vioneta.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-text-secondary hover:text-white bg-white/5 rounded-2xl transition-colors duration-300 border border-white/5 hover:border-white/10"
+              >
+                Explore Documentation
+              </a>
             </div>
           </div>
-        </CardSpotlight>
+        </div>
       </div>
     </section>
   );
