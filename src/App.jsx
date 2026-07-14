@@ -62,7 +62,7 @@ function LandingPage() {
         <>
           <CustomCursor />
           <NoiseOverlay />
-          <div className="min-h-screen bg-dark">
+          <div className="custom-cursor-active min-h-screen bg-dark">
             <Navbar />
             <Hero />
             <Stats />
