@@ -321,11 +321,19 @@ export default function Products() {
           transition={{ delay: 0.3 }}
           className="mt-20"
         >
-          <div className="rounded-3xl glass-card p-8 lg:p-12 border border-white/5">
-            <h3 className="text-xl font-bold text-white text-center mb-3">How It All Connects</h3>
-            <p className="text-text-secondary text-center text-sm mb-10 max-w-lg mx-auto">
-              From sensors to cloud, every layer of the Vioneta stack is designed to work together seamlessly.
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/15 bg-primary/5 mb-4">
+              <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+              <span className="text-xs font-semibold text-primary tracking-wider uppercase">Architecture</span>
+            </div>
+            <h3 className="text-2xl lg:text-3xl font-black text-white mb-3">
+              How It All <span className="text-gradient">Connects</span>
+            </h3>
+            <p className="text-text-secondary text-sm max-w-md mx-auto leading-relaxed">
+              From sensors to cloud — every layer of the Vioneta stack is designed to work together seamlessly.
             </p>
+          </div>
+          <div className="rounded-3xl border border-white/[0.04] bg-gradient-to-b from-white/[0.02] to-transparent p-3 md:p-4">
             <FlowDiagram />
           </div>
         </motion.div>
