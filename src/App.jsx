@@ -12,13 +12,6 @@ import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 import Loader from './components/Loader';
 import NoiseOverlay from './components/NoiseOverlay';
-import Marquee from './components/Marquee';
-
-const MARQUEE_ITEMS = [
-  'Edge Computing', 'IoT Solutions', 'VEdgeHub', 'VCloud', 'VEdge',
-  'Industrial IoT', 'Smart Agriculture', 'Manufacturing 4.0',
-  'Real-Time Analytics', 'Edge AI', 'Fleet Management', 'VOS',
-];
 
 export default function App() {
   const [loaded, setLoaded] = useState(false);
@@ -61,19 +54,9 @@ export default function App() {
           <div className="min-h-screen bg-dark">
             <Navbar />
             <Hero />
-
-            <div className="relative py-6 border-y border-white/5">
-              <Marquee items={MARQUEE_ITEMS} speed={40} className="text-text-muted/40 text-sm font-medium tracking-widest uppercase" />
-            </div>
-
             <Stats />
             <Products />
             <Features />
-
-            <div className="relative py-6 border-y border-white/5">
-              <Marquee items={[...MARQUEE_ITEMS].reverse()} speed={35} reverse className="text-text-muted/30 text-sm font-medium tracking-widest uppercase" />
-            </div>
-
             <Industries />
             <Team />
             <CTA />
