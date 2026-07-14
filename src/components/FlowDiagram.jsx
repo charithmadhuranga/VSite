@@ -216,7 +216,7 @@ export default function FlowDiagram() {
     if (!svgContainerRef.current) return;
 
     if (panzoomInstance.current) {
-      panzoomInstance.current.destroy();
+      panzoomInstance.current.dispose();
     }
 
     const pz = panzoom(svgContainerRef.current, {
@@ -239,7 +239,7 @@ export default function FlowDiagram() {
     });
 
     return () => {
-      pz.destroy();
+      pz.dispose();
       panzoomInstance.current = null;
       vp?.removeEventListener('wheel', handleWheel);
     };

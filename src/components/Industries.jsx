@@ -140,6 +140,7 @@ export default function Industries() {
                 key={industry.name}
                 className={`industry-card group relative rounded-2xl glass-card p-7 border ${industry.borderColor} transition-all duration-300 cursor-pointer`}
               >
+
                 <div className={`absolute inset-0 bg-gradient-to-br ${industry.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl`} />
                 <div className="relative z-10">
                   <div className="flex items-start justify-between mb-5">

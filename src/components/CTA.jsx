@@ -38,7 +38,7 @@ export default function CTA() {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-40 bg-primary/10 blur-[100px] rounded-full" />
           <div className="absolute bottom-0 right-1/4 w-64 h-40 bg-secondary/10 blur-[80px] rounded-full" />
 
-          <div className="relative z-10 p-12 lg:p-20 text-center">
+          <div className="relative z-10 p-12 lg:p-20 text-center cta-content">
             <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
