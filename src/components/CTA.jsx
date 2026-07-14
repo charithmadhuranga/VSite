@@ -33,10 +33,10 @@ export default function CTA() {
 
       <div className="max-w-5xl mx-auto px-6">
         <CardSpotlight className="relative rounded-[2rem] overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-dark-surface to-secondary/10" />
-          <div className="absolute inset-0 bg-dark-card/90 backdrop-blur-sm" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-40 bg-primary/10 blur-[100px] rounded-full" />
-          <div className="absolute bottom-0 right-1/4 w-64 h-40 bg-secondary/10 blur-[80px] rounded-full" />
+          <div className="absolute inset-0 bg-dark-card" />
+          <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] via-transparent to-white/[0.02]" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-32 bg-primary/[0.04] blur-[80px] rounded-full" />
+          <div className="absolute bottom-0 right-1/4 w-60 h-28 bg-secondary/[0.04] blur-[60px] rounded-full" />
 
           <div className="relative z-10 p-12 lg:p-20 text-center cta-content">
             <motion.div
