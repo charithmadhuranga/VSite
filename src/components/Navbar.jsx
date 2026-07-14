@@ -29,6 +29,7 @@ const navLinks = [
   { label: 'Solutions', href: '#features' },
   { label: 'About', href: '#about' },
   { label: 'Team', href: '#team' },
+  { label: 'Blog', to: '/blog' },
 ];
 
 export default function Navbar() {
@@ -79,13 +80,22 @@ export default function Navbar() {
               onMouseEnter={() => link.submenu && setActiveDropdown(link.label)}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <a
-                href={link.href || '#'}
-                className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-text-secondary hover:text-white transition-colors duration-300 rounded-lg hover:bg-white/5"
-              >
-                {link.label}
-                {link.submenu && <ChevronDown className="w-3.5 h-3.5" />}
-              </a>
+              {link.to ? (
+                <Link
+                  to={link.to}
+                  className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-text-secondary hover:text-white transition-colors duration-300 rounded-lg hover:bg-white/5"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  href={link.href || '#'}
+                  className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-text-secondary hover:text-white transition-colors duration-300 rounded-lg hover:bg-white/5"
+                >
+                  {link.label}
+                  {link.submenu && <ChevronDown className="w-3.5 h-3.5" />}
+                </a>
+              )}
               <AnimatePresence>
                 {link.submenu && activeDropdown === link.label && (
                   <motion.div
@@ -122,12 +132,6 @@ export default function Navbar() {
         </div>
 
         <div className="hidden lg:flex items-center gap-3">
-          <Link
-            to="/blog"
-            className="px-4 py-2 text-sm font-medium text-text-secondary hover:text-white transition-colors duration-300 rounded-lg hover:bg-white/5"
-          >
-            Blog
-          </Link>
           <motion.a
             href="https://vioneta.com"
             target="_blank"
@@ -167,13 +171,23 @@ export default function Navbar() {
             <div className="px-6 py-6 space-y-2">
               {navLinks.map((link) => (
                 <div key={link.label}>
-                  <a
-                    href={link.href || '#'}
-                    onClick={() => setMobileOpen(false)}
-                    className="block px-4 py-3 text-text-secondary hover:text-white hover:bg-white/5 rounded-lg transition-colors"
-                  >
-                    {link.label}
-                  </a>
+                  {link.to ? (
+                    <Link
+                      to={link.to}
+                      onClick={() => setMobileOpen(false)}
+                      className="block px-4 py-3 text-text-secondary hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href || '#'}
+                      onClick={() => setMobileOpen(false)}
+                      className="block px-4 py-3 text-text-secondary hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  )}
                   {link.submenu && (
                     <div className="pl-4 space-y-3 mt-1">
                       {link.submenu.map((group) => (
@@ -201,13 +215,6 @@ export default function Navbar() {
                 </div>
               ))}
               <div className="pt-4 space-y-3">
-                <Link
-                  to="/blog"
-                  onClick={() => setMobileOpen(false)}
-                  className="block w-full text-center px-6 py-3 text-sm font-medium text-text-secondary hover:text-white rounded-xl hover:bg-white/5"
-                >
-                  Blog
-                </Link>
                 <a
                   href="#contact"
                   className="block w-full text-center px-6 py-3 text-sm font-semibold text-dark bg-gradient-to-r from-primary to-primary-light rounded-xl"
