@@ -19,13 +19,14 @@
     "express": "^5.2.1",
     "framer-motion": "^12.42.2",
     "gsap": "^3.15.0",
+    "jodit": "^4.9.4",
+    "jodit-react": "^5.3.21",
     "jsonwebtoken": "^9.0.3",
     "lenis": "^1.3.25",
     "lucide-react": "^1.24.0",
     "panzoom": "^9.4.4",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
-    "react-quill-new": "^3.8.3",
     "react-router-dom": "^7.18.1"
   },
   "devDependencies": {
