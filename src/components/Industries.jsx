@@ -16,7 +16,7 @@ const industries = [
     name: 'Agriculture',
     description: 'Smart farming, precision irrigation, soil monitoring, and crop health analytics with edge-processed data.',
     stats: '40% water savings',
-    color: 'from-emerald-500/20 to-emerald-500/5',
+    glowColor: '16,185,129',
     borderColor: 'border-emerald-500/20 hover:border-emerald-500/40',
     iconColor: 'text-emerald-400',
     iconBg: 'bg-emerald-500/10',
@@ -26,7 +26,7 @@ const industries = [
     name: 'Manufacturing',
     description: 'Predictive maintenance, process automation, quality control, and real-time equipment monitoring.',
     stats: '60% less downtime',
-    color: 'from-blue-500/20 to-blue-500/5',
+    glowColor: '59,130,246',
     borderColor: 'border-blue-500/20 hover:border-blue-500/40',
     iconColor: 'text-blue-400',
     iconBg: 'bg-blue-500/10',
@@ -36,7 +36,7 @@ const industries = [
     name: 'Energy & Utilities',
     description: 'Smart grid management, energy monitoring, load balancing, and renewable integration at the edge.',
     stats: '30% energy optimisation',
-    color: 'from-amber-500/20 to-amber-500/5',
+    glowColor: '245,158,11',
     borderColor: 'border-amber-500/20 hover:border-amber-500/40',
     iconColor: 'text-amber-400',
     iconBg: 'bg-amber-500/10',
@@ -46,7 +46,7 @@ const industries = [
     name: 'Healthcare',
     description: 'Patient monitoring, medical device integration, asset tracking, and edge-processed health data.',
     stats: 'Real-time vitals',
-    color: 'from-rose-500/20 to-rose-500/5',
+    glowColor: '244,63,94',
     borderColor: 'border-rose-500/20 hover:border-rose-500/40',
     iconColor: 'text-rose-400',
     iconBg: 'bg-rose-500/10',
@@ -56,7 +56,7 @@ const industries = [
     name: 'Logistics & Transportation',
     description: 'Fleet management, route optimization, cold chain monitoring, and real-time asset visibility.',
     stats: '35% cost reduction',
-    color: 'from-violet-500/20 to-violet-500/5',
+    glowColor: '139,92,246',
     borderColor: 'border-violet-500/20 hover:border-violet-500/40',
     iconColor: 'text-violet-400',
     iconBg: 'bg-violet-500/10',
@@ -66,7 +66,7 @@ const industries = [
     name: 'Commercial Infrastructure',
     description: 'Smart buildings, HVAC control, access management, energy optimisation, and occupancy analytics.',
     stats: '25% operational savings',
-    color: 'from-cyan-500/20 to-cyan-500/5',
+    glowColor: '6,182,212',
     borderColor: 'border-cyan-500/20 hover:border-cyan-500/40',
     iconColor: 'text-cyan-400',
     iconBg: 'bg-cyan-500/10',
@@ -138,10 +138,10 @@ export default function Industries() {
             return (
               <CardSpotlight
                 key={industry.name}
+                spotlightColor={industry.glowColor}
                 className={`industry-card group relative rounded-2xl glass-card p-7 border ${industry.borderColor} transition-all duration-300 cursor-pointer`}
               >
-
-                <div className={`absolute inset-0 bg-gradient-to-br ${industry.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl`} />
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none" style={{ background: `radial-gradient(ellipse at 50% 30%, rgba(${industry.glowColor},0.15), transparent 65%)` }} />
                 <div className="relative z-10">
                   <div className="flex items-start justify-between mb-5">
                     <div className={`w-12 h-12 rounded-xl ${industry.iconBg} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
