@@ -29,14 +29,11 @@ export default function CTA() {
 
   return (
     <section id="contact" ref={sectionRef} className="relative py-32 overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="max-w-5xl mx-auto px-6">
-        <CardSpotlight className="relative rounded-[2rem] overflow-hidden">
-          <div className="absolute inset-0 bg-dark-card" />
-          <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] via-transparent to-white/[0.02]" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-32 bg-primary/[0.04] blur-[80px] rounded-full" />
-          <div className="absolute bottom-0 right-1/4 w-60 h-28 bg-secondary/[0.04] blur-[60px] rounded-full" />
+        <CardSpotlight spotlightColor="255,255,255" className="relative rounded-[2rem] overflow-hidden">
+          <div className="absolute inset-0 bg-[#111827]" />
 
           <div className="relative z-10 p-12 lg:p-20 text-center cta-content">
             <motion.div
@@ -44,7 +41,7 @@ export default function CTA() {
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}
               transition={{ type: 'spring', bounce: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-primary/20 mb-8"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8"
             >
               <Sparkles className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-primary">Start Building Today</span>
@@ -76,7 +73,7 @@ export default function CTA() {
                 <a
                   href="https://vioneta.com"
                   target="_blank"
-                  className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-text-secondary hover:text-white glass-card rounded-2xl transition-colors duration-300 border border-white/5 hover:border-white/10"
+                  className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-text-secondary hover:text-white bg-white/5 rounded-2xl transition-colors duration-300 border border-white/5 hover:border-white/10"
                 >
                   Explore Documentation
                 </a>

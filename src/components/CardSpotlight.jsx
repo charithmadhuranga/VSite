@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-export default function CardSpotlight({ children, className = '', ...props }) {
+export default function CardSpotlight({ children, className = '', spotlightColor = '255,255,255', ...props }) {
   const ref = useRef(null);
   const [pos, setPos] = useState({ x: 0, y: 0, opacity: 0 });
 
@@ -27,10 +27,11 @@ export default function CardSpotlight({ children, className = '', ...props }) {
       {...props}
     >
       <div
-        className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-500"
+        className="pointer-events-none absolute inset-0 z-0"
         style={{
-          background: `radial-gradient(600px circle at ${pos.x}px ${pos.y}px, rgba(0,212,170,0.06), transparent 40%)`,
+          background: `radial-gradient(600px circle at ${pos.x}px ${pos.y}px, rgba(${spotlightColor},0.04), transparent 40%)`,
           opacity: pos.opacity,
+          transition: 'opacity 0.4s ease',
         }}
       />
       <div className="relative z-10">{children}</div>
